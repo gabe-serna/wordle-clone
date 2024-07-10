@@ -13,7 +13,7 @@ import React from 'react';
 function App() {
   const [mysteryWordArray, setMysteryWordArray] = useState([] as string[]);
   const handleNewWord = () => {
-    generateWord(setMysteryWordArray, '', true);
+    generateWord(setMysteryWordArray);
   };
 
   useEffect(() => {
