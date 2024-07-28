@@ -439,3 +439,61 @@ body {
     margin-top: 10px;
   }
 }
+
+@media (max-width: 700px) {
+  :root {
+    overflow: hidden;
+  }
+
+  body {
+    width: 100vw;
+  }
+  #root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .letter-row {
+    width: 20rem;
+    font-size: 1.9rem;
+    &:first-of-type {
+      margin-top: 10px;
+    }
+  }
+  #keyboard {
+    max-width: min-content;
+    width: calc(100% - 16px);
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .key-row {
+    max-width: min-content;
+    width: calc(100% - 20px);
+    flex-wrap: nowrap;
+
+    &:nth-of-type(2) {
+      max-width: none;
+      & .key:first-of-type {
+        margin-left: 15px;
+      }
+      & .key:last-of-type {
+        margin-right: 15px;
+      }
+    }
+  }
+  .key {
+    flex-shrink: 2;
+    &.utility {
+      margin: 0;
+    }
+  }
+
+  .popup {
+    width: 100%;
+  }
+}
