@@ -352,19 +352,21 @@ function App() {
   return (
     <>
       <Header />
-      {gameBoard.map((row, rowIndex) => (
-        <LetterRow key={rowIndex} ref={rowRefs.current[rowIndex]}>
-          {row.map((col, colIndex) => (
-            <Letter
-              key={`${rowIndex}${colIndex}`}
-              ref={letterRefs.current[rowIndex][colIndex]}
-              data-color
-            >
-              {col}
-            </Letter>
-          ))}
-        </LetterRow>
-      ))}
+      <section id='game-board'>
+        {gameBoard.map((row, rowIndex) => (
+          <LetterRow key={rowIndex} ref={rowRefs.current[rowIndex]}>
+            {row.map((col, colIndex) => (
+              <Letter
+                key={`${rowIndex}${colIndex}`}
+                ref={letterRefs.current[rowIndex][colIndex]}
+                data-color
+              >
+                {col}
+              </Letter>
+            ))}
+          </LetterRow>
+        ))}
+      </section>
       <Alert>{alertMessage}</Alert>
       <div id='keyboard'>
         <KeyRow>
